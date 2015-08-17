@@ -1,0 +1,23 @@
+{
+  "name": "markdown-api",
+  "version": "1.0.0",
+  "description": "Renders markdown via an API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "author": "The Zooniverse",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3",
+    "markdown-it": "^4.4.0",
+    "markdown-it-container": "^1.0.0",
+    "markdown-it-emoji": "^1.1.0",
+    "markdown-it-footnote": "^1.0.0",
+    "markdown-it-sub": "^1.0.0",
+    "markdown-it-sup": "^1.0.0",
+    "morgan": "^1.6.1",
+    "twemoji": "^1.4.1"
+  }
+}
