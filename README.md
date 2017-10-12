@@ -2,6 +2,8 @@
 
 Provides [Zooniverse flavored markdown](https://github.com/zooniverse-ui/markdownz) via an API.
 
+As of 2017-10, this is used by TalkApi to render posts and comments when it sends them out in HTML emails. By making Markdown rendering into a microservice, we can make sure to use the same engine as we use in the frontend.
+
 ## Usage
 
 `NODE_ENV=production node .`
