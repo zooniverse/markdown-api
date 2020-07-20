@@ -36,7 +36,7 @@ pipeline {
     }
 
     stage('Deploy to Kubernetes') {
-      when { tag 'master' }
+      when { branch 'master' }
       agent any
       steps {
         sh "sed 's/__IMAGE_TAG__/${GIT_COMMIT}/g' kubernetes/deployment.tmpl | kubectl --context azure apply --record -f -"
@@ -44,7 +44,7 @@ pipeline {
       post {
         success {
           script {
-            if (env.TAG_NAME == 'master') {
+            if (env.BRANCH_NAME == 'master') {
               slackSend (
                 color: '#00FF00',
                 message: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})",
@@ -56,7 +56,7 @@ pipeline {
 
         failure {
           script {
-            if (env.TAG_NAME == 'master') {
+            if (env.BRANCH_NAME == 'master') {
               slackSend (
                 color: '#FF0000',
                 message: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})",
