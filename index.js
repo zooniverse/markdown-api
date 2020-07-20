@@ -18,4 +18,9 @@ app.post('/html', function(req, res) {
   res.end('<div>' + markdown.html() + '</div>');
 });
 
+app.get('/', function(req, res) {
+  res.statusCode = 200;
+  res.end();
+});
+
 var server = app.listen(parseInt(process.env.MARKDOWN_PORT) || 2998);

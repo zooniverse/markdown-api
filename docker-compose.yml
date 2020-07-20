@@ -1,0 +1,8 @@
+version: '3'
+services:
+  markdown-api:
+    build: .
+    environment:
+      - "NODE_ENV=development"
+    ports:
+      - "2998:2998"

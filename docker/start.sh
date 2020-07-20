@@ -1,3 +1,3 @@
 #!/bin/bash
 
-/usr/local/bin/node /node_app/index.js
+exec /usr/local/bin/node /node_app/index.js
