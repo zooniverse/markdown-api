@@ -11,7 +11,7 @@
   "dependencies": {
     "body-parser": "^1.13.3",
     "express": "^4.13.3",
-    "markdown-it": "^4.4.0",
+    "markdown-it": "^12.3.2",
     "markdown-it-container": "^1.0.0",
     "markdown-it-emoji": "^1.1.0",
     "markdown-it-footnote": "^1.0.0",
