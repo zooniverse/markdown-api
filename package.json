@@ -18,6 +18,6 @@
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0",
     "morgan": "^1.9.1",
-    "twemoji": "^1.4.1"
+    "twemoji": "^14.0.2"
   }
 }
