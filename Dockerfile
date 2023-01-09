@@ -1,11 +1,14 @@
-FROM node:0.12-onbuild
+FROM node:16-alpine
 
-WORKDIR /node_app
+WORKDIR /app
 
-COPY . /node_app
+COPY package.json /app/
+COPY package-lock.json /app/
 
-RUN cd /node_app && npm install .
+RUN npm ci
+
+COPY . /app/
 
 EXPOSE 2998
 
-CMD [ "/node_app/docker/start.sh" ]
+CMD [ "npm", "start" ]
