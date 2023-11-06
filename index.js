@@ -14,12 +14,11 @@ app.post('/html', function(req, res) {
   params = req.body;
   res.setHeader('Content-Type', 'text/html');
   res.statusCode = 200;
-  html = utils.getHtml({
+  const project = params.project ? { slug: params.project } : undefined;
+  const html = utils.getHtml({
     baseURI: 'https://www.zooniverse.org',
     content: params.markdown,
-    project: {
-      slug: params.project
-    }
+    project
   })
   res.end('<div>' + html + '</div>');
 });
