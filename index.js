@@ -17,7 +17,9 @@ app.post('/html', function(req, res) {
   html = utils.getHtml({
     baseURI: 'https://www.zooniverse.org',
     content: params.markdown,
-    project: params.project
+    project: {
+      slug: params.project
+    }
   })
   res.end('<div>' + html + '</div>');
 });
